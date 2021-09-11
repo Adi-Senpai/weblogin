@@ -14,7 +14,7 @@ with open('login.json','r') as c:
 class Login(db.Model):
     email=db.Column(db.String(15),unique=True,nullable=False,primary_key=True)
     password=db.Column(db.String(15),nullable=False)
-
+db.create_all()
 
 @application.route("/", methods=['GET','POST'])
 def login():
